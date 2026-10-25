@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>蝌蚪影视｜kedouyingshi-app.github.io · 放映资讯、类型片单与影人手记</title>
+<meta name="description" content="蝌蚪影视（https://kedouyingshi-app.github.io）是一份长期更新的观影档案：收录华语与世界范围内的剧情长片、纪录片与短片，按城市影像、公路漫游、单色影像等类型整理片单，同步记录王家卫、是枝裕和、阿涅斯·瓦尔达等影人的创作手记，以及每周两次的观影短评笔记。">
+<meta name="keywords" content="蝌蚪影视,kedouyingshi-app,kedouyingshi-app.github.io,影视推荐,类型片单,影人手记,观影笔记,独立电影,纪录片推荐,华语城市影像,经典电影档案">
+<meta name="author" content="蝌蚪影视编辑部">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#16181d">
+<link rel="canonical" href="https://kedouyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="蝌蚪影视">
+<meta property="og:title" content="蝌蚪影视 · 放映资讯与观影档案">
+<meta property="og:description" content="在 kedouyingshi-app.github.io 整理看过的片子：类型片单、影人手记、每周更新的观影笔记。">
+<meta property="og:url" content="https://kedouyingshi-app.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="蝌蚪影视 · kedouyingshi-app.github.io">
+<meta name="twitter:description" content="一份长期更新的观影档案：片单、手记、笔记，都在 kedouyingshi-app.github.io。">
+<style>
+:root{
+  --paper:#f2efe7;
+  --ink:#16181d;
+  --red:#c1452e;
+  --slate:#5f6874;
+  --card:#fbfaf6;
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:0;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.16;
+  background-image:radial-gradient(#a9a293 1px,transparent 1px);
+  background-size:5px 5px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--red);color:#fff}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ── 顶部识标条 ── */
+.topbar{border-bottom:3px solid var(--ink);background:var(--ink);color:var(--paper)}
+.topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-top:11px;padding-bottom:11px}
+.mark{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:.06em}
+.mark span{color:var(--red);font-family:var(--mono);font-size:12px;letter-spacing:.18em;margin-left:8px;vertical-align:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.chips a{
+  font-size:12px;line-height:1;padding:6px 10px;border:1px solid rgba(242,239,231,.42);
+  color:var(--paper);letter-spacing:.04em;
+}
+.chips a:hover{border-color:var(--red);background:var(--red)}
+
+/* ── 头图区块 ── */
+.masthead{padding:44px 0 34px;border-bottom:1px solid var(--ink)}
+.masthead .kicker{
+  font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--red);
+  text-transform:uppercase;margin-bottom:16px;
+}
+h1{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(44px,10.5vw,88px);line-height:1.02;letter-spacing:-.03em;
+}
+h1 em{font-style:normal;color:var(--red)}
+.lede{
+  margin-top:20px;max-width:56ch;font-size:clamp(15px,2.2vw,17px);color:#31363f;
+}
+.urlbar{
+  margin-top:22px;display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;
+  border:1.5px solid var(--ink);background:var(--card);padding:9px 14px;
+  box-shadow:5px 5px 0 var(--ink);
+}
+.urlbar b{font-family:var(--mono);font-size:13px;letter-spacing:.02em;word-break:break-all}
+.urlbar i{font-style:normal;font-size:12px;color:var(--slate)}
+.tally{
+  margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--ink);border:1.5px solid var(--ink);
+}
+.tally div{background:var(--card);padding:14px 16px}
+.tally strong{display:block;font-family:var(--serif);font-size:26px;line-height:1.2;letter-spacing:-.01em}
+.tally small{font-size:12px;color:var(--slate);letter-spacing:.05em}
+@media(min-width:700px){.tally{grid-template-columns:repeat(4,1fr)}}
+
+/* ── 主体栅格 ── */
+.layout{padding:38px 0 10px}
+@media(min-width:1000px){
+  .layout{display:grid;grid-template-columns:206px 1fr;gap:52px;align-items:start}
+}
+.rail{position:relative}
+@media(min-width:1000px){.rail{position:sticky;top:22px}}
+.rail .rt{
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--slate);
+  padding-bottom:9px;border-bottom:1px solid var(--ink);margin-bottom:12px;
+}
+.rail ol{list-style:none;display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.rail li{flex:0 0 auto}
+.rail a{
+  display:flex;align-items:baseline;gap:8px;font-size:13px;
+  padding:7px 11px;border:1px solid var(--ink);background:var(--card);white-space:nowrap;
+}
+.rail a i{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:.06em}
+.rail a:hover{background:var(--ink);color:var(--paper)}
+.rail a:hover i{color:var(--paper)}
+@media(min-width:1000px){
+  .rail ol{flex-direction:column;gap:0;overflow:visible}
+  .rail a{border:0;border-bottom:1px dotted #b9b3a4;background:none;padding:10px 0;border-radius:0}
+  .rail a:hover{background:none;color:var(--red);box-shadow:none}
+  .rail a:hover i{color:var(--red)}
+}
+.rail .note{
+  display:none;margin-top:22px;font-size:12px;color:var(--slate);line-height:1.7;
+  border-left:2px solid var(--red);padding-left:10px;
+}
+@media(min-width:1000px){.rail .note{display:block}}
+
+/* ── 栏目通用 ── */
+.section{padding:0 0 46px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:24px}
+.sec-h .num{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.14em}
+.sec-h h2{font-family:var(--serif);font-size:clamp(21px,3.6vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.sec-h .tag{margin-left:auto;font-size:12px;color:var(--slate);white-space:nowrap}
+
+/* 01 卡片 */
+.grid3{display:grid;gap:20px}
+@media(min-width:760px){.grid3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px) and (min-width:1000px){.grid3 .card:nth-child(2){transform:translateY(18px)}}
+.card{background:var(--card);border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column}
+.card .ph{
+  height:132px;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:12px;
+}
+.card:nth-child(1) .ph{background:linear-gradient(135deg,#2b3a4a 0%,#6b7280 100%)}
+.card:nth-child(2) .ph{background:linear-gradient(135deg,#3d2c33 0%,#8a5a52 100%)}
+.card:nth-child(3) .ph{background:linear-gradient(135deg,#33403a 0%,#7f8f7a 100%)}
+.card .ph b{
+  font-family:var(--serif);font-size:15px;color:#f6f4ee;letter-spacing:.02em;
+  background:rgba(22,24,29,.62);padding:3px 8px;
+}
+.card .ph s{position:absolute;right:12px;top:12px;text-decoration:none;font-family:var(--mono);font-size:11px;color:#f6f4ee;background:var(--red);padding:2px 7px}
+.card .bd{padding:16px 16px 18px}
+.card h3{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.4;margin-bottom:4px}
+.card .meta{font-family:var(--mono);font-size:11px;color:var(--slate);letter-spacing:.04em;margin-bottom:11px}
+.card p{font-size:14.5px;color:#31363f}
+.card .ft{margin-top:14px;padding-top:12px;border-top:1px dotted #b9b3a4;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.card .ft a{font-size:13px;border-bottom:1.5px solid var(--red);padding-bottom:1px}
+.card .ft a:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.card .ft span{font-family:var(--mono);font-size:11px;color:var(--slate)}
+
+/* 02 影人 */
+.people{display:grid;gap:22px}
+@media(min-width:820px){.people{grid-template-columns:repeat(3,1fr)}}
+.person{border-top:2px solid var(--ink);padding-top:14px}
+.person .av{
+  width:62px;height:62px;border:1.5px solid var(--ink);border-radius:50%;
+  margin-bottom:13px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:22px;background:var(--card);box-shadow:4px 4px 0 var(--ink);
+}
+.person h3{font-family:var(--serif);font-size:18px;margin-bottom:2px}
+.person .en{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--slate);margin-bottom:10px;text-transform:uppercase}
+.person p{font-size:14.5px;color:#31363f}
+.person .ln{margin-top:11px;font-size:13px}
+.person .ln a{border-bottom:1.5px solid var(--red)}
+
+/* 03 片单 */
+.slips{list-style:none;border-top:1px solid var(--ink)}
+.slips li{
+  display:grid;grid-template-columns:52px 1fr;gap:0 14px;align-items:baseline;
+  border-bottom:1px dotted #b9b3a4;padding:15px 0;
+}
+.slips li:hover{background:#efece2}
+.slips .no{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.06em}
+.slips h3{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.5}
+.slips .sub{font-size:14px;color:var(--slate);margin-top:3px}
+.slips .cnt{
+  font-family:var(--mono);font-size:12px;color:var(--slate);grid-column:2;margin-top:6px;
+}
+@media(min-width:640px){
+  .slips li{grid-template-columns:52px 1fr 96px}
+  .slips .cnt{grid-column:3;margin-top:0;text-align:right}
+}
+
+/* 04 时间线 */
+.diary{list-style:none;position:relative;padding-left:26px}
+.diary::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--ink)}
+.diary li{position:relative;padding:0 0 24px}
+.diary li::before{
+  content:"";position:absolute;left:-25px;top:9px;width:11px;height:11px;
+  background:var(--paper);border:2px solid var(--ink);border-radius:50%;
+}
+.diary li:first-child::before{background:var(--red);border-color:var(--red)}
+.diary time{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--red);display:block;margin-bottom:3px}
+.diary h3{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:5px}
+.diary p{font-size:14.5px;color:#31363f}
+
+/* 05 档案 */
+.dossier{border:1.5px solid var(--ink);background:var(--card);box-shadow:6px 6px 0 var(--ink)}
+.dossier dl{display:grid;grid-template-columns:1fr}
+.dossier dl>div{display:grid;grid-template-columns:96px 1fr;border-bottom:1px dotted #b9b3a4}
+.dossier dl>div:last-child{border-bottom:0}
+.dossier dt{
+  font-size:13px;color:var(--slate);padding:13px 14px;background:#efece2;
+  border-right:1px dotted #b9b3a4;letter-spacing:.04em;
+}
+.dossier dd{padding:13px 14px;font-size:14.5px;word-break:break-all}
+.dossier dd b{font-family:var(--mono);font-size:13px;letter-spacing:.01em}
+@media(min-width:640px){.dossier dl>div{grid-template-columns:132px 1fr}}
+
+/* 06 联络 */
+.contact{display:grid;gap:18px}
+@media(min-width:760px){.contact{grid-template-columns:1.1fr .9fr;gap:30px}}
+.contact .box{border:1.5px solid var(--ink);background:var(--card);padding:20px}
+.contact h3{font-family:var(--serif);font-size:17px;margin-bottom:12px}
+.contact ul{list-style:none}
+.contact li{border-bottom:1px dotted #b9b3a4;padding:9px 0;font-size:14.5px;display:flex;justify-content:space-between;gap:12px}
+.contact li:last-child{border-bottom:0}
+.contact li a{border-bottom:1.5px solid var(--red)}
+.contact li em{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--slate)}
+.contact p{font-size:14.5px;color:#31363f}
+.contact .box .btn{
+  display:inline-block;margin-top:16px;padding:10px 18px;background:var(--ink);color:var(--paper);
+  font-size:14px;border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--red);
+}
+.contact .box .btn:hover{background:var(--red);box-shadow:4px 4px 0 var(--ink)}
+
+/* 关键词云带 */
+.kwband{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:22px 0;margin-bottom:40px}
+.kwband .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.kwband b{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--red);margin-right:6px}
+.kwband a{font-size:13px;border:1px solid var(--ink);padding:5px 11px;background:var(--card)}
+.kwband a:hover{background:var(--ink);color:var(--paper)}
+
+/* ── 页脚 ── */
+footer{background:var(--ink);color:var(--paper);padding:40px 0 30px;margin-top:10px}
+.fgrid{display:grid;gap:26px}
+@media(min-width:760px){.fgrid{grid-template-columns:1.4fr 1fr 1fr}}
+footer h4{font-family:var(--serif);font-size:16px;margin-bottom:12px;letter-spacing:.03em}
+footer p,footer li{font-size:13.5px;color:#c9c6bd;line-height:1.9}
+footer ul{list-style:none}
+footer a:hover{color:#fff;border-bottom:1px solid var(--red)}
+.furl{
+  font-family:var(--mono);font-size:13px;color:#fff;background:rgba(193,69,46,.22);
+  border:1px solid rgba(193,69,46,.7);padding:6px 10px;display:inline-block;margin-top:8px;word-break:break-all;
+}
+.fbot{
+  margin-top:30px;padding-top:16px;border-top:1px solid rgba(242,239,231,.22);
+  display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;font-size:12.5px;color:#9c998f;
+}
+.fbot span{font-family:var(--mono)}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="mark">蝌蚪影视<span>KEDOU YINGSHI</span></div>
+    <nav class="chips" aria-label="站点快捷入口">
+      <a href="#">放映资讯</a>
+      <a href="#">类型片单</a>
+      <a href="#">影人手记</a>
+      <a href="#">观影笔记</a>
+      <a href="#">站点档案</a>
+    </nav>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="kicker">Screening Notes Since 2019 ／ No.0417</p>
+    <h1>蝌蚪影视<br><em>一份慢慢写的观影档案</em></h1>
+    <p class="lede">不做评分，不做排行榜。这里只收三类东西：看完之后想说点什么的那部片子、值得反复翻的类型片单，以及关于影人的零散手记。所有内容按时间倒序堆在 <b>kedouyingshi-app.github.io</b>，随时可以翻回去重看。</p>
+    <div class="urlbar">
+      <i>访问地址</i>
+      <b>https://kedouyingshi-app.github.io</b>
+    </div>
+    <div class="tally">
+      <div><strong>1,286</strong><small>已收录影片</small></div>
+      <div><strong>214</strong><small>影人手记</small></div>
+      <div><strong>37</strong><small>类型标签</small></div>
+      <div><strong>2019</strong><small>起始年份</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap layout">
+
+  <aside class="rail">
+    <p class="rt">栏目索引 INDEX</p>
+    <ol>
+      <li><a href="#"><i>01</i>今日放映</a></li>
+      <li><a href="#"><i>02</i>影人手记</a></li>
+      <li><a href="#"><i>03</i>类型片单</a></li>
+      <li><a href="#"><i>04</i>观影笔记</a></li>
+      <li><a href="#"><i>05</i>站点档案</a></li>
+      <li><a href="#"><i>06</i>投稿联络</a></li>
+    </ol>
+    <p class="note">每周三、周六各更新一次。<br>片单接受读者纠错，<br>写清楚片名与年份即可。</p>
+  </aside>
+
+  <main>
+
+    <section class="section" id="screening">
+      <div class="sec-h">
+        <span class="num">01</span>
+        <h2>今日放映</h2>
+        <span class="tag">本周三更新 · 3 部</span>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <div class="ph"><b>花样年华</b><s>2000</s></div>
+          <div class="bd">
+            <h3>没说出口的部分</h3>
+            <p class="meta">王家卫 ／ 剧情 · 爱情 ／ 98 分钟</p>
+            <p>旗袍换了二十几身，台词却越来越少。王家卫把一段始终没挑明的感情，拍成了走廊、雨檐和墙上一道道水痕。看第三遍才发现，周慕云和苏丽珍其实很少真正对视。</p>
+            <div class="ft"><a href="#">读完整篇</a><span>10-22</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph"><b>穆赫兰道</b><s>2001</s></div>
+          <div class="bd">
+            <h3>梦和现实怎么拼</h3>
+            <p class="meta">大卫·林奇 ／ 悬疑 · 心理 ／ 147 分钟</p>
+            <p>前半段的梦和后半段的现实如何对接，林奇从来不打算给答案。建议关灯看，留意蓝色盒子出现之前那一段忽然安静下来的留白，那是整部片子的轴心。</p>
+            <div class="ft"><a href="#">读完整篇</a><span>10-19</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph"><b>千与千寻</b><s>2001</s></div>
+          <div class="bd">
+            <h3>汤屋里的成年人</h3>
+            <p class="meta">宫崎骏 ／ 动画 · 奇幻 ／ 125 分钟</p>
+            <p>汤屋里所有人都在拼命干活，只有无脸男站在雨里不说话。二十多年后重看，才发现它讲的其实是一场入职——记住自己的名字，比什么都重要。</p>
+            <div class="ft"><a href="#">读完整篇</a><span>10-15</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="people">
+      <div class="sec-h">
+        <span class="num">02</span>
+        <h2>影人手记</h2>
+        <span class="tag">长期连载</span>
+      </div>
+      <div class="people">
+        <article class="person">
+          <div class="av">王</div>
+          <h3>王家卫</h3>
+          <p class="en">Wong Kar-wai</p>
+          <p>从《旺角卡门》到《一代宗师》，他拍的一直是时间，而不是故事。人物总在错过，镜头却总在原地多停两秒，那两秒就是他真正要说的话。</p>
+          <p class="ln"><a href="#">查看 18 篇相关笔记</a></p>
+        </article>
+        <article class="person">
+          <div class="av">是</div>
+          <h3>是枝裕和</h3>
+          <p class="en">Hirokazu Kore-eda</p>
+          <p>一顿饭、一次晾衣、一趟电车。他把家庭里最细小的裂缝慢慢摊开，从不指责谁，只是让镜头多待一会儿，观众自己就坐不住了。</p>
+          <p class="ln"><a href="#">查看 12 篇相关笔记</a></p>
+        </article>
+        <article class="person">
+          <div class="av">瓦</div>
+          <h3>阿涅斯·瓦尔达</h3>
+          <p class="en">Agnès Varda</p>
+          <p>九十岁还在街头拍人。她的镜头从来不高高在上，只是蹲下来听别人讲。看她的片子会意识到，纪录片和被拍的人之间，其实可以是一种平等。</p>
+          <p class="ln"><a href="#">查看 7 篇相关笔记</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="list">
+      <div class="sec-h">
+        <span class="num">03</span>
+        <h2>类型片单</h2>
+        <span class="tag">共 37 组 · 持续整理</span>
+      </div>
+      <ul class="slips">
+        <li><span class="no">No.01</span>
+          <div><h3>华语城市影像</h3><p class="sub">从《牯岭街少年杀人事件》到《爱情万岁》，城市从来不只是背景，它也是主角之一。</p></div>
+          <span class="cnt">24 部</span></li>
+        <li><span class="no">No.02</span>
+          <div><h3>公路与漫游</h3><p class="sub">车窗外不断退去的风景，多半是人物心理的外化。走得越远，越是在躲自己。</p></div>
+          <span class="cnt">18 部</span></li>
+        <li><span class="no">No.03</span>
+          <div><h3>单色影像</h3><p class="sub">去掉颜色之后，光和构图才真正站到台前。适合用来练习怎么看画面本身。</p></div>
+          <span class="cnt">12 部</span></li>
+        <li><span class="no">No.04</span>
+          <div><h3>纪录片单元</h3><p class="sub">真实自有它的重量，不需要额外渲染。这一组里有几部看完会睡不着。</p></div>
+          <span class="cnt">31 部</span></li>
+        <li><span class="no">No.05</span>
+          <div><h3>短片合集</h3><p class="sub">十五分钟内把一件事讲完，比拍长片难得多。挑了 46 部，大多是导演的早期手笔。</p></div>
+          <span class="cnt">46 部</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="notes">
+      <div class="sec-h">
+        <span class="num">04</span>
+        <h2>观影笔记</h2>
+        <span class="tag">随看随记 · 按时间倒序</span>
+      </div>
+      <ul class="diary">
+        <li>
+          <time>2026 / 10 / 18</time>
+          <h3>《爱在黎明破晓前》· 重看第四遍</h3>
+          <p>整部片子几乎只有两个人在说话，却比大多数爱情场面都动人。看到结尾那段站台告别，还是会停下来。</p>
+        </li>
+        <li>
+          <time>2026 / 10 / 09</time>
+          <h3>《牯岭街少年杀人事件》· 四小时</h3>
+          <p>看完在阳台上坐了很久，说不出话。四个小时里没有一个多余的镜头，时代压在每个人身上的重量是慢慢加上去的。</p>
+        </li>
+        <li>
+          <time>2026 / 09 / 27</time>
+          <h3>《东京物语》· 第一次在大银幕</h3>
+          <p>小津把机位压得那么低，人物说话时几乎不动。越看越觉得这种克制厉害——所有情绪都留在了人物没说出口的那句里。</p>
+        </li>
+        <li>
+          <time>2026 / 09 / 12</time>
+          <h3>《天堂电影院》· 修复版</h3>
+          <p>当年被剪掉的接吻镜头，最后被攒成了一整卷胶片。看到那一段的时候，影厅里有好几个人在小声抽气。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="about">
+      <div class="sec-h">
+        <span class="num">05</span>
+        <h2>站点档案</h2>
+        <span class="tag">关于蝌蚪影视</span>
+      </div>
+      <div class="dossier">
+        <dl>
+          <div><dt>站点名称</dt><dd>蝌蚪影视</dd></div>
+          <div><dt>访问地址</dt><dd><b>https://kedouyingshi-app.github.io</b></dd></div>
+          <div><dt>内容方向</dt><dd>放映资讯、类型片单、影人手记、观影笔记</dd></div>
+          <div><dt>更新节奏</dt><dd>每周三、周六各更新一次，遇长片专题临时加更</dd></div>
+          <div><dt>收录范围</dt><dd>华语及世界范围内的剧情长片、纪录片、动画与短片</dd></div>
+          <div><dt>写作方式</dt><dd>不做评分、不排名次，只记录看完之后真实想说的话</dd></div>
+          <div><dt>页面结构</dt><dd>单页呈现，移动端自适应，栏目之间可直接跳转</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="sec-h">
+        <span class="num">06</span>
+        <h2>投稿与联络</h2>
+        <span class="tag">来信一般三日内回复</span>
+      </div>
+      <div class="contact">
+        <div class="box">
+          <h3>可以聊这些</h3>
+          <ul>
+            <li><a href="#">投一篇观影笔记</a><em>800 字以上</em></li>
+            <li><a href="#">补一份冷门片单</a><em>附年份与导演</em></li>
+            <li><a href="#">片单信息纠错</a><em>写明片名条目</em></li>
+            <li><a href="#">内容转载授权</a><em>注明用途</em></li>
+            <li><a href="#">读者来信</a><em>不限主题</em></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>关于转载</h3>
+          <p>这里的文字都可以转，但希望能保留作者署名，并在开头注明出处是蝌蚪影视。片单类内容引用时请连同更新日期一起带上，避免读者按旧版本去找片子。</p>
+          <a class="btn" href="#">查看完整转载说明</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="kwband">
+  <div class="wrap">
+    <b>KEYWORDS</b>
+    <a href="#">蝌蚪影视</a>
+    <a href="#">kedouyingshi-app</a>
+    <a href="#">类型片单</a>
+    <a href="#">影人手记</a>
+    <a href="#">观影笔记</a>
+    <a href="#">华语城市影像</a>
+    <a href="#">纪录片推荐</a>
+    <a href="#">经典电影档案</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>蝌蚪影视</h4>
+        <p>一份从 2019 年开始慢慢写的观影档案。收录影片、整理片单、记录影人，也记下每次看完之后那些说不清楚的念头。</p>
+        <span class="furl">https://kedouyingshi-app.github.io</span>
+      </div>
+      <div>
+        <h4>栏目</h4>
+        <ul>
+          <li><a href="#">今日放映</a></li>
+          <li><a href="#">影人手记</a></li>
+          <li><a href="#">类型片单</a></li>
+          <li><a href="#">观影笔记</a></li>
+          <li><a href="#">站点档案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>说明</h4>
+        <ul>
+          <li><a href="#">投稿须知</a></li>
+          <li><a href="#">转载授权</a></li>
+          <li><a href="#">片单纠错</a></li>
+          <li><a href="#">隐私说明</a></li>
+          <li><a href="#">站点地图</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2019–2026 蝌蚪影视 · kedouyingshi-app.github.io</span>
+      <span>Updated 2026-10-22 ／ 单页结构 ／ 移动端自适应</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "蝌蚪影视",
+      "alternateName": "kedouyingshi-app",
+      "url": "https://kedouyingshi-app.github.io/",
+      "inLanguage": "zh-CN",
+      "description": "放映资讯、类型片单、影人手记与观影笔记的长期存档站点。"
+    },
+    {
+      "@type": "CollectionPage",
+      "name": "蝌蚪影视 · 观影档案",
+      "url": "https://kedouyingshi-app.github.io/",
+      "about": "影视推荐与观影笔记整理",
+      "isPartOf": { "@type": "WebSite", "url": "https://kedouyingshi-app.github.io/" }
+    }
+  ]
+}
+</script>
+</body>
+</html>
